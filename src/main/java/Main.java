@@ -17,7 +17,7 @@ public class Main {
         Parser parser = new Parser();
 
         ArrayList<File> files = new ArrayList<>();
-        readFile.getListOfAllFiles("C:\\corpus\\corpus", files);
+        readFile.getListOfAllFiles("C:\\Users\\USER\\Desktop\\corpus\\corpus", files);
 
         //ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
@@ -27,7 +27,9 @@ public class Main {
             for (Pair p: pairs) {
                 //executorService.execute(new Runnable() {
                     //public void run() {
-                        List<String> stringList = parser.parseString((String)p.getValue());
+                        //List<String> stringList = parser.parseString((String)p.getValue());
+                char[] docArray = ((String)p.getValue()).toCharArray();
+                List<String> stringList = parser.parse(docArray);
                 //System.out.println("HI");
                     //}
                 //});

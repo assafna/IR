@@ -8,11 +8,12 @@ import java.util.regex.Pattern;
 public class Parser {
 
     private HashMap<String, String> dates;
+    private int index = 0;
 
     public Parser() {
 
         dates = new HashMap<>();
-    //dd lalalaa
+
         dates.put("January", "01");
         dates.put("February", "02");
         dates.put("March", "03");
@@ -92,6 +93,112 @@ public class Parser {
         dates.put("DEC", "12");
 
     }
+
+
+    private String isNumber(char[] docArray, int arrayLength){
+        boolean isNumber = true;
+        boolean isDecimalNumber = false;
+        StringBuilder str = new StringBuilder();
+       // while(index<arrayLength && (isDigit(docArray[index]) || isComma(docArray[index]) || isDot(docArray[index]))) {
+
+            //not decimal numbers
+            while (index < arrayLength && isNumber && !isDecimalNumber) {
+                while (index < arrayLength && isDigit(docArray[index])) {
+                    str.append(docArray[index]);
+                    index++;
+                }
+
+                if (index < arrayLength && isComma(docArray[index])) {
+                    index++;
+                }
+                else
+                    break;
+            }
+
+            //decimal numbers
+            if (isDot(docArray[index]) && index<arrayLength-1 && isDigit(docArray[index+1])) {
+                str.append(docArray[index]);
+                index++;
+                for (int i = 0; i < 3 && index < arrayLength; i++) {
+                    if (isDigit(docArray[index])) {
+                        isDecimalNumber = true;
+                        str.append(docArray[index]);
+                        index++;
+                    }
+                    else
+                        break;
+                }
+
+                //skip the next digits
+                while (index < arrayLength && isDigit(docArray[index]))
+                    index++;
+
+                if (isDecimalNumber) {
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    double d = Double.parseDouble(str.toString());
+                    return Double.valueOf(df.format(d)).toString();
+                }
+            }
+          //  index++;
+
+
+     //   }
+        if(!isDecimalNumber && isNumber && str.length()<=2){
+            isDate(str, docArray, arrayLength);
+
+        }
+
+        return str.toString();
+    }
+
+    public ArrayList<String> parse(char[] docArray){
+        ArrayList<String> terms = new ArrayList<>();
+        int arrayLength = docArray.length;
+        while(index < arrayLength){
+            if(isDigit(docArray[index])) {
+                String term = isNumber(docArray, docArray.length);
+                if (term != null)
+                    terms.add(term);
+            }
+            index++;
+
+        }
+        return terms;
+
+    }
+
+
+    private boolean isDate(StringBuilder str, char[] docArray, int arrayLength){
+        return false;
+    }
+
+    private boolean isDigit(char c){
+        if(c >= 48 && c<=57)
+            return true;
+        return false;
+    }
+
+    private boolean isDot(char c){
+        if(c == 46)
+            return true;
+        return false;
+    }
+
+    private boolean isComma(char c){
+        if(c == 44)
+            return true;
+        return false;
+    }
+
+    private boolean isWhiteSpace(char c){
+        if(c == 32)
+            return true;
+        return false;
+    }
+
+
+
+
 
     public List<String> findNumbers(String input) {
 
