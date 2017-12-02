@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8dfaac0-babc-4c14-8544-f4c81655d25c" name="Default" comment="dd">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
+    <list default="true" id="d8dfaac0-babc-4c14-8544-f4c81655d25c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Parser.class" afterPath="$PROJECT_DIR$/target/classes/Parser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/Parser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,8 +21,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="703">
+              <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -33,15 +31,30 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+            <state relative-caret-position="1295">
+              <caret line="315" column="0" lean-forward="true" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
               <folding>
                 <element signature="method#Parser#0;class#Parser#0" expanded="false" />
-                <element signature="method#isNumber#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#parse#0;class#Parser#0" expanded="false" />
+                <element signature="method#parse#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#findNumber#0;class#Parser#0" expanded="false" />
+                <element signature="method#findNumber#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isDigit#0;class#Parser#0" expanded="false" />
                 <element signature="method#isDigit#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isDot#0;class#Parser#0" expanded="false" />
                 <element signature="method#isDot#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isComma#0;class#Parser#0" expanded="false" />
                 <element signature="method#isComma#0;class#Parser#0" expanded="false" />
-                <element signature="method#isWhiteSpace#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+                <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isPercent#0;class#Parser#0" expanded="false" />
+                <element signature="method#isPercent#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+                <element signature="method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+                <element signature="method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+                <element signature="docComment;method#findExpressions#0;class#Parser#0" expanded="false" />
+                <element signature="method#findExpressions#0;class#Parser#0" expanded="false" />
                 <element signature="method#parseString#0;class#Parser#0" expanded="false" />
                 <element signature="method#addFollowingWord#0;class#Parser#0" expanded="false" />
                 <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
@@ -57,9 +70,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,6 +138,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -141,9 +155,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -589,7 +600,8 @@
       <workItem from="1511866765067" duration="2354000" />
       <workItem from="1512138837166" duration="1912000" />
       <workItem from="1512141169134" duration="11624000" />
-      <workItem from="1512161660383" duration="1171000" />
+      <workItem from="1512161660383" duration="4846000" />
+      <workItem from="1512195422182" duration="2231000" />
     </task>
     <task id="LOCAL-00001" summary="dd">
       <created>1512141270528</created>
@@ -605,14 +617,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512141280266</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="number parser">
+      <created>1512162865087</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512162865087</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17061000" />
+    <option name="totallyTimeSpent" value="22967000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
+    <frame x="-14" y="-14" width="3228" height="1738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -622,10 +641,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33245033" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33245033" sideWeight="0.50875" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1602649" sideWeight="0.49875" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.49125" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -637,7 +656,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33245033" sideWeight="0.49375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33245033" sideWeight="0.49125" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -654,14 +673,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dd" />
-    <option name="LAST_COMMIT_MESSAGE" value="dd" />
+    <MESSAGE value="number parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="number parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser.java</url>
-          <line>165</line>
+          <line>125</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -687,9 +707,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="164" column="34" lean-forward="true" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="method#Parser#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Parser#0" expanded="false" />
+            <element signature="method#isDigit#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDot#0;class#Parser#0" expanded="false" />
+            <element signature="method#isDot#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isComma#0;class#Parser#0" expanded="false" />
+            <element signature="method#isComma#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findExpressions#0;class#Parser#0" expanded="false" />
+            <element signature="method#findExpressions#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseString#0;class#Parser#0" expanded="false" />
+            <element signature="method#addFollowingWord#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseFraction#0;class#Parser#0" expanded="false" />
+            <element signature="method#parseDate#0;class#Parser#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -699,11 +768,26 @@
           <caret line="171" column="21" lean-forward="true" selection-start-line="171" selection-start-column="21" selection-end-line="171" selection-end-column="21" />
           <folding>
             <element signature="method#Parser#0;class#Parser#0" expanded="false" />
-            <element signature="method#isNumber#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Parser#0" expanded="false" />
             <element signature="method#isDigit#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDot#0;class#Parser#0" expanded="false" />
             <element signature="method#isDot#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isComma#0;class#Parser#0" expanded="false" />
             <element signature="method#isComma#0;class#Parser#0" expanded="false" />
-            <element signature="method#isWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findExpressions#0;class#Parser#0" expanded="false" />
+            <element signature="method#findExpressions#0;class#Parser#0" expanded="false" />
             <element signature="method#parseString#0;class#Parser#0" expanded="false" />
             <element signature="method#addFollowingWord#0;class#Parser#0" expanded="false" />
             <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
@@ -720,35 +804,48 @@
     <entry file="file://$PROJECT_DIR$/src/Parser.java" />
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/ReadFile.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="19" column="60" lean-forward="false" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+        <state relative-caret-position="1295">
+          <caret line="315" column="0" lean-forward="true" selection-start-line="315" selection-start-column="0" selection-end-line="315" selection-end-column="0" />
           <folding>
             <element signature="method#Parser#0;class#Parser#0" expanded="false" />
-            <element signature="method#isNumber#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="method#findNumber#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Parser#0" expanded="false" />
             <element signature="method#isDigit#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isDot#0;class#Parser#0" expanded="false" />
             <element signature="method#isDot#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isComma#0;class#Parser#0" expanded="false" />
             <element signature="method#isComma#0;class#Parser#0" expanded="false" />
-            <element signature="method#isWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="method#isPercent#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isCapitalLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="method#isLowerCaseLetter#0;class#Parser#0" expanded="false" />
+            <element signature="docComment;method#findExpressions#0;class#Parser#0" expanded="false" />
+            <element signature="method#findExpressions#0;class#Parser#0" expanded="false" />
             <element signature="method#parseString#0;class#Parser#0" expanded="false" />
             <element signature="method#addFollowingWord#0;class#Parser#0" expanded="false" />
             <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />

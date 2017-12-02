@@ -8,7 +8,9 @@ import java.util.regex.Pattern;
 public class Parser {
 
     private HashMap<String, String> dates;
+    private char[] docArray;
     private int index = 0;
+    private int arrayLength;
 
     public Parser() {
 
@@ -95,71 +97,29 @@ public class Parser {
     }
 
 
-    private String isNumber(char[] docArray, int arrayLength){
-        boolean isNumber = true;
-        boolean isDecimalNumber = false;
-        StringBuilder str = new StringBuilder();
-       // while(index<arrayLength && (isDigit(docArray[index]) || isComma(docArray[index]) || isDot(docArray[index]))) {
-
-            //not decimal numbers
-            while (index < arrayLength && isNumber && !isDecimalNumber) {
-                while (index < arrayLength && isDigit(docArray[index])) {
-                    str.append(docArray[index]);
-                    index++;
-                }
-
-                if (index < arrayLength && isComma(docArray[index])) {
-                    index++;
-                }
-                else
-                    break;
-            }
-
-            //decimal numbers
-            if (isDot(docArray[index]) && index<arrayLength-1 && isDigit(docArray[index+1])) {
-                str.append(docArray[index]);
-                index++;
-                for (int i = 0; i < 3 && index < arrayLength; i++) {
-                    if (isDigit(docArray[index])) {
-                        isDecimalNumber = true;
-                        str.append(docArray[index]);
-                        index++;
-                    }
-                    else
-                        break;
-                }
-
-                //skip the next digits
-                while (index < arrayLength && isDigit(docArray[index]))
-                    index++;
-
-                if (isDecimalNumber) {
-                    DecimalFormat df = new DecimalFormat("#.##");
-                    double d = Double.parseDouble(str.toString());
-                    return Double.valueOf(df.format(d)).toString();
-                }
-            }
-          //  index++;
-
-
-     //   }
-        if(!isDecimalNumber && isNumber && str.length()<=2){
-            isDate(str, docArray, arrayLength);
-
-        }
-
-        return str.toString();
-    }
-
-    public ArrayList<String> parse(char[] docArray){
+    /**
+     * parse the doc array according to the given rules
+     * @param array char array to parse
+     * @return terms in the doc
+     */
+    public ArrayList<String> parse(char[] array){
+        index=0;
+        docArray = array;
+        arrayLength = docArray.length;
         ArrayList<String> terms = new ArrayList<>();
         int arrayLength = docArray.length;
+        String term;
         while(index < arrayLength){
             if(isDigit(docArray[index])) {
-                String term = isNumber(docArray, docArray.length);
-                if (term != null)
-                    terms.add(term);
+                term = findNumber();
+                terms.add(term);
+                skipWhiteSpace();
+                if(index < arrayLength && isPercent())
+                    terms.add(term + " percent");
             }
+            else if(isCapitalLetter())
+                terms.add(findExpressions());
+
             index++;
 
         }
@@ -167,33 +127,190 @@ public class Parser {
 
     }
 
+    /**
+     * find the number from the given array. tThe number can contain the characters: 0-9, ',, '.'
+     * @return string that represents the number
+     */
+    private String findNumber(){
+        boolean isNumber = true;
+        boolean isDecimalNumber = false;
+        StringBuilder str = new StringBuilder();
 
-    private boolean isDate(StringBuilder str, char[] docArray, int arrayLength){
+        //not decimal numbers
+        while (index < arrayLength && isNumber && !isDecimalNumber) {
+            while (index < arrayLength && isDigit(docArray[index])) {
+                str.append(docArray[index]);
+                index++;
+            }
+
+            if (index < arrayLength && isComma(docArray[index])) {
+                index++;
+            }
+            else
+                break;
+        }
+
+        //decimal numbers
+        if (index < arrayLength && isDot(docArray[index]) && index < arrayLength-1 && isDigit(docArray[index+1])) {
+            str.append(docArray[index]);
+            index++;
+            for (int i = 0; i < 3 && index < arrayLength; i++) {
+                if (isDigit(docArray[index])) {
+                    isDecimalNumber = true;
+                    str.append(docArray[index]);
+                    index++;
+                }
+                else
+                    break;
+            }
+
+            //skip the next digits
+            while (index < arrayLength && isDigit(docArray[index]))
+                index++;
+
+            if (isDecimalNumber) {
+                DecimalFormat df = new DecimalFormat("#.##");
+                double d = Double.parseDouble(str.toString());
+                return Double.valueOf(df.format(d)).toString();
+            }
+        }
+        //  index++;
+
+
+        //   }
+        if(!isDecimalNumber && isNumber && str.length()<=2){
+            isDate(str);
+
+        }
+
+        return str.toString();
+    }
+
+    private boolean isDate(StringBuilder str){
         return false;
     }
 
+    /**
+     * check if the char is a digit
+     * @param c digit to check
+     * @return true if the char is a digit
+     */
     private boolean isDigit(char c){
         if(c >= 48 && c<=57)
             return true;
         return false;
     }
 
+    /**
+     * check if the char is a dot
+     * @param c digit to check
+     * @return true if the char is a dot
+     */
     private boolean isDot(char c){
         if(c == 46)
             return true;
         return false;
     }
 
+    /**
+     * check if the char is a comma
+     * @param c digit to check
+     * @return true if the char is a comma
+     */
     private boolean isComma(char c){
         if(c == 44)
             return true;
         return false;
     }
 
-    private boolean isWhiteSpace(char c){
-        if(c == 32)
+    /**
+     * skipping the white spaces chars is the array
+     * @return true, if there is a space
+     */
+    private boolean skipWhiteSpace(){
+        boolean ans = false;
+        while(index < arrayLength && docArray[index] == 32) {
+            index++;
+            ans = true;
+        }
+        return ans;
+    }
+
+    /**
+     * check if the char '%' is the next char or if the word "percent" is the next term in the doc
+     * @return true, if the char is '%' or if the next word is "percent".
+     */
+    private boolean isPercent(){
+        if(docArray[index] == 37) //check if the char is '%'
+            return true;
+        //check if the next word is "percent"
+        if(index < docArray.length-7 && docArray[index] == 'p' && docArray[index+1] == 'e' && docArray[index+2] == 'r' &&
+                docArray[index+3] == 'c' && docArray[index+4] == 'e' && docArray[index+5] == 'n' && docArray[index+6] == 't' ){
+            index = index + 7;
+            while(index < arrayLength && docArray[index] != 32)//skip until the end of the word
+                index++;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * check if the next char in the doc is capital letter
+     * @return true, if the next char in the doc is capital letter
+     */
+    private boolean isCapitalLetter(){
+        if(docArray[index] >= 65 && docArray[index] <= 90)
             return true;
         return false;
+    }
+
+    /**
+     * check if the next char in the doc is lowercase letter
+     * @return true, if the next char in the doc is lowercase letter
+     */
+    private boolean isLowerCaseLetter(){
+        if(docArray[index] >= 97 && docArray[index] <= 122)
+            return true;
+        return false;
+    }
+
+    /**
+     * find the next expression in the doc.
+     * The expression can be a sequence of words that starts with capital letters,
+     * or an expression that contains capital letters only
+     * @return the next expression in the doc
+     */
+    private String findExpressions(){
+        boolean isAllCapitalLetters = false;
+        StringBuilder str = new StringBuilder();
+
+        //check if the word start with capital letter
+        while(index < arrayLength && isCapitalLetter()) {
+            index++;
+            //if the expression contains only capital letters, stop when it is lowercase letter
+            if(isAllCapitalLetters && index < arrayLength && isLowerCaseLetter()) {
+                index = index - 2;
+                break;
+            }
+            else
+                str.append(Character.toLowerCase(docArray[index-1]));
+
+            //append to the expression all the lowercase letters (only if it is not a full capital letters expression).
+            while (index < arrayLength && !isAllCapitalLetters && isLowerCaseLetter()) {
+                str.append(docArray[index]);
+                index++;
+            }
+            //if the expression contains only capital letters
+            while (index < arrayLength && isCapitalLetter()) {
+                isAllCapitalLetters =true;
+                str.append(Character.toLowerCase(docArray[index]));
+                index++;
+            }
+            if(skipWhiteSpace())
+                str.append(' ');
+        }
+        return str.toString();
+
     }
 
 
